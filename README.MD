@@ -28,10 +28,12 @@
 
 - [Dimension - Introduction](./tutorial.cube.dimension.intro/README.MD)
 
-- [Hierarchy - Querys based on a Tables](./tutorial.cube.hierarchy.query.table.base/README.MD)
+- [Hierarchy - Query based on seperate Tables for Fact and Dimension](./tutorial.cube.hierarchy.query.table.base/README.MD)
 
-- [Hierarchy - Querys based on a Tables](./tutorial.cube.hierarchy.query.table.multilevel.multitable/README.MD)
+- [Hierarchy - Query based on a Table with 2 Levels](./tutorial.cube.hierarchy.query.table.multilevel.multitable/README.MD)
 
-- [Hierarchy - Querys based on a Tables](./tutorial.cube.hierarchy.query.table.multilevel.singletable/README.MD)
+- [Hierarchy - Query based on all in one Table](./tutorial.cube.hierarchy.query.table.multilevel.singletable/README.MD)
 
 - [Hierarchy - Query based on Join](./tutorial.cube.hierarchy.query.join.base/README.MD)
+
+- [Hierarchy - Query based on a 2 Joind with 3 Levels](./tutorial.cube.hierarchy.query.join.multi/README.MD)

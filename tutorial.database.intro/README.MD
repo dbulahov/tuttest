@@ -1,34 +1,80 @@
-# Documentation
-### CatalogName : Database - Intro
-### Schema Database - Intro : 
----
-### Cubes :
+# Introduction into DataBase
 
-    
+The foundation of all data analysis is the data to be analyzed.
+In this case, it is stored in a relational database.
 
-### Cube Matrix for Database - Intro:
-```mermaid
-quadrantChart
-title Cube Matrix
-x-axis small level number --> high level number
-y-axis Low row count --> High row count
-quadrant-1 Complex
-quadrant-2 Deep
-quadrant-3 Simple
-quadrant-4 Wide
+
+## Catalog
+
+The catalog is the primary object in a Daanse server. It serves as a logical grouping to separate different topics in the context of data storage and analysis. The catalog references a single databaseSchema.
+
+
+```xmi
+<roma:Catalog  id="_cat" name="Database - Intro" dbschemas="#_dbschema"/>
 
 ```
----
-### Database :
----
-```mermaid
----
-title: Diagram;
----
-erDiagram
-"TableOne✔"{
-string ColumnOne "is null (1000000000.0) ✔"
-}
+
+## Schema
+
+A catalog can be structured into databaseSchemas to logically group tables. The same table name can exist in multiple schemas.
+
+In Daanse, we represent the database schema, where the data is stored, as a DatabaseSchema element.
+
+
+```xmi
+<roma:DatabaseSchema  id="_dbschema"/>
 
 ```
----
+
+## Table
+
+A schema contains the tables within a database. There are multiple types of tables, which we will explain in further tutorials.
+
+The most common type we use is the physical table. The tables defined in a schema do not have to match all tables in the actual database — only those that should be visible for the server. This provides an additional layer of security.
+
+
+```xmi
+<roma:PhysicalTable  id="_tab" name="TableOne"/>
+
+```
+
+## Column
+
+A table consists of columns, each with a name and a data type.
+
+The columns defined in a table do not have to match all columns in the actual database — only those that should be visible for the server. This provides an additional layer of security.
+
+
+```xmi
+<roma:PhysicalColumn  id="_col" name="ColumnOne"/>
+
+```
+
+
+## Definition
+
+This files represent the complete definition of the catalog.
+
+```xmi
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:roma="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping">
+  <roma:Catalog id="_cat" name="Database - Intro" dbschemas="_dbschema"/>
+  <roma:DatabaseSchema id="_dbschema">
+    <tables xsi:type="roma:PhysicalTable" id="_tab" name="TableOne">
+      <columns xsi:type="roma:PhysicalColumn" id="_col" name="ColumnOne"/>
+    </tables>
+  </roma:DatabaseSchema>
+</xmi:XMI>
+
+```
+## Documentation
+
+More information and visualisations about this Catalog you can find in the [Documentation](./DOCUMENTATION.MD).
+
+## csv data
+
+
+This files represent the data in the tables.
+
+- [TableOne](./data/TableOne.csv)
+
