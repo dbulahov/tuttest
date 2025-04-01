@@ -6,13 +6,6 @@
 
     MeasuresDatatypeCube
 
----
-#### Cube "MeasuresDatatypeCube":
-
-    
-
-##### Table: "Fact"
-
 ### Cube "MeasuresDatatypeCube" diagram:
 
 ---
@@ -33,6 +26,14 @@ erDiagram
 c0["MeasuresDatatypeCube"]{
 M Measure_-_Datatype_Integer ""
 M Measure_-_Datatype_Numeric ""
+M Fact_Count ""
+D Measures ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -44,8 +45,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -83,8 +84,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

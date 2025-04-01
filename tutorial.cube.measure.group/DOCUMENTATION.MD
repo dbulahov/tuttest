@@ -6,13 +6,6 @@
 
     MeasureGroupCube
 
----
-#### Cube "MeasureGroupCube":
-
-    
-
-##### Table: "Fact"
-
 ### Cube "MeasureGroupCube" diagram:
 
 ---
@@ -34,6 +27,14 @@ c0["MeasureGroupCube"]{
 M Measure_A ""
 M Measure_B ""
 M Measure_1 ""
+M Fact_Count ""
+D Measures ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -45,8 +46,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -84,8 +85,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

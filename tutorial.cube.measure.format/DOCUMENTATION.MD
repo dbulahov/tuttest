@@ -6,13 +6,6 @@
 
     MeasuresFormatCube
 
----
-#### Cube "MeasuresFormatCube":
-
-    
-
-##### Table: "Fact"
-
 ### Cube "MeasuresFormatCube" diagram:
 
 ---
@@ -34,6 +27,14 @@ c0["MeasuresFormatCube"]{
 M Format_x_xx0_00 ""
 M Format_x_xx0 ""
 M Format_x_xx0_ ""
+M Fact_Count ""
+D Measures ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -45,8 +46,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -84,8 +85,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

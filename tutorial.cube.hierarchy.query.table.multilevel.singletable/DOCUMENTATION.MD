@@ -6,34 +6,6 @@
 
     Cube Query linked Tables
 
----
-#### Cube "Cube Query linked Tables":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    TownHierarchy
-
-##### Hierarchy TownHierarchy:
-
-Tables: "Fact"
-
-Levels: "Country, Town"
-
-###### Level "Country" :
-
-    column(s): KEY
-
-###### Level "Town" :
-
-    column(s): KEY
-
 ### Cube "Cube Query linked Tables" diagram:
 
 ---
@@ -53,18 +25,26 @@ Levels: "Country, Town"
 erDiagram
 c0["Cube Query linked Tables"]{
 M theMeasure ""
-D _ ""
+M Fact_Count ""
+D Measures ""
+D Town ""
 }
-d00["Town"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["Town"] {
 H TownHierarchy ""
 }
-h000["TownHierarchy"] {
+h010["TownHierarchy"] {
 L Country ""
 L Town ""
 }
-"c0" ||--|| "d00" : "KEY-KEY"
-"d00" ||--|| "h000" : "KEY-KEY"
-"d00" ||--|| "h000" : "KEY-KEY"
+"c0" ||--|| "d01" : "KEY-KEY"
+"d01" ||--|| "h010" : "KEY-KEY"
+"d01" ||--|| "h010" : "KEY-KEY"
 ```
 ---
 ### Database :
@@ -75,9 +55,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
-string COUNTRY "is null (1000000000.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -116,9 +95,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
-string COUNTRY "is null (1000000000.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

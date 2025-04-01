@@ -27,14 +27,14 @@ title: Diagram;
 ---
 erDiagram
 "TableWithColumnTypes✔"{
-string ColumnWithDescription "is null (1000000000.0) ✔"
-string ColumnVarchar "is null (255.0) ✔"
-double ColumnDecimal "is null (3.2) ✔"
-double ColumnNumeric "is null (100000.0) ✔"
-double ColumnFloat "is null (53.0) ✔"
-double ColumnReal "is null (24.0) ✔"
-double ColumnDouble "is null (53.0) ✔"
-int ColumnInteger "is null (32.0) ✔"
+Varchar ColumnWithDescription "is null ✔"
+Varchar ColumnVarchar "is null (255) ✔"
+Decimal ColumnDecimal "is null ✔"
+Numeric ColumnNumeric "is null ✔"
+Float ColumnFloat "is null ✔"
+Real ColumnReal "is null ✔"
+Double ColumnDouble "is null ✔"
+Integer ColumnInteger "is null ✔"
 }
 
 ```

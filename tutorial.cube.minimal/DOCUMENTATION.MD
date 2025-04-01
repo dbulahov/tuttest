@@ -6,13 +6,6 @@
 
     MinimalCube
 
----
-#### Cube "MinimalCube":
-
-    
-
-##### Table: "Fact"
-
 ### Cube "MinimalCube" diagram:
 
 ---
@@ -32,6 +25,14 @@
 erDiagram
 c0["MinimalCube"]{
 M Measure-Sum ""
+M Fact_Count ""
+D Measures ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -43,8 +44,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -82,8 +83,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

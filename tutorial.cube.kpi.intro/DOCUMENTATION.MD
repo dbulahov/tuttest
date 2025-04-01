@@ -6,13 +6,6 @@
 
     Cube Kpi
 
----
-#### Cube "Cube Kpi":
-
-    
-
-##### Table: "Fact"
-
 ### Cube "Cube Kpi" diagram:
 
 ---
@@ -32,9 +25,17 @@
 erDiagram
 c0["Cube Kpi"]{
 M Measure1-Sum ""
+M Fact_Count ""
+D Measures ""
 KPI Kpi1 ""
 KPI Kpi2 ""
 KPI Kpi3 ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -46,7 +47,7 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int VALUE "is null (32.0) ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -83,7 +84,7 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int VALUE "is null (32.0) ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

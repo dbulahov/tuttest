@@ -6,34 +6,6 @@
 
     Cube Query linked Tables
 
----
-#### Cube "Cube Query linked Tables":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    TownHierarchy
-
-##### Hierarchy TownHierarchy:
-
-Tables: "Town"
-
-Levels: "Country, Town"
-
-###### Level "Country" :
-
-    column(s): COUNTRY
-
-###### Level "Town" :
-
-    column(s): ID
-
 ### Cube "Cube Query linked Tables" diagram:
 
 ---
@@ -53,18 +25,26 @@ Levels: "Country, Town"
 erDiagram
 c0["Cube Query linked Tables"]{
 M theMeasure ""
-D _ ""
+M Fact_Count ""
+D Measures ""
+D Town ""
 }
-d00["Town"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["Town"] {
 H TownHierarchy ""
 }
-h000["TownHierarchy"] {
+h010["TownHierarchy"] {
 L Country ""
 L Town ""
 }
-"c0" ||--|| "d00" : "TOWN_ID-ID"
-"d00" ||--|| "h000" : "ID-COUNTRY"
-"d00" ||--|| "h000" : "ID-ID"
+"c0" ||--|| "d01" : "TOWN_ID-ID"
+"d01" ||--|| "h010" : "ID-COUNTRY"
+"d01" ||--|| "h010" : "ID-ID"
 ```
 ---
 ### Database :
@@ -75,13 +55,13 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int TOWN_ID "is null (32.0) ✔"
-int VALUE "is null (32.0) ✔"
+Integer TOWN_ID "is null ✔"
+Integer VALUE "is null ✔"
 }
 "Town✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-string COUNTRY "is null (1000000000.0) ✔"
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
+Varchar COUNTRY "is null ✔"
 }
 
 "Fact✔" ||--o{ "Town✔" : "TOWN_ID-ID"
@@ -120,13 +100,13 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int TOWN_ID "is null (32.0) ✔"
-int VALUE "is null (32.0) ✔"
+Integer TOWN_ID "is null ✔"
+Integer VALUE "is null ✔"
 }
 "Town✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-string COUNTRY "is null (1000000000.0) ✔"
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
+Varchar COUNTRY "is null ✔"
 }
 
 "Fact✔" ||--o{ "Town✔" : "TOWN_ID-ID"

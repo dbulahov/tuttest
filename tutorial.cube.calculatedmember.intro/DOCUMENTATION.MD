@@ -6,30 +6,6 @@
 
     Cube CalculatedMember
 
----
-#### Cube "Cube CalculatedMember":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    theHierarchy
-
-##### Hierarchy theHierarchy:
-
-Tables: "Fact"
-
-Levels: "theLevel"
-
-###### Level "theLevel" :
-
-    column(s): KEY
-
 ### Cube "Cube CalculatedMember" diagram:
 
 ---
@@ -50,18 +26,26 @@ erDiagram
 c0["Cube CalculatedMember"]{
 M Measure1-Sum ""
 M Measure2-Count ""
-D _ ""
-CM Calculated_Member_1 ""
-CM Calculated_Member_2 ""
+M Calculated_Member_1 ""
+D Measures ""
+D theDimension ""
 }
-d00["theDimension"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["theDimension"] {
 H theHierarchy ""
 }
-h000["theHierarchy"] {
+h010["theHierarchy"] {
+L _All_ ""
 L theLevel ""
 }
-"c0" ||--|| "d00" : "KEY-KEY"
-"d00" ||--|| "h000" : "KEY-KEY"
+"c0" ||--|| "d01" : "KEY-KEY"
+"d01" ||--|| "h010" : "KEY-"
+"d01" ||--|| "h010" : "KEY-KEY"
 ```
 ---
 ### Database :
@@ -72,9 +56,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
-double VALUE_NUMERIC "is null (100000.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -113,9 +96,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
-double VALUE_NUMERIC "is null (100000.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

@@ -6,30 +6,6 @@
 
     CubeWithSimpleDimension
 
----
-#### Cube "CubeWithSimpleDimension":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    theHierarchy
-
-##### Hierarchy theHierarchy:
-
-Tables: "Fact"
-
-Levels: "theLevel"
-
-###### Level "theLevel" :
-
-    column(s): KEY
-
 ### Cube "CubeWithSimpleDimension" diagram:
 
 ---
@@ -49,16 +25,24 @@ Levels: "theLevel"
 erDiagram
 c0["CubeWithSimpleDimension"]{
 M theMeasure ""
-D _ ""
+M Fact_Count ""
+D Measures ""
+D theDimension ""
 }
-d00["theDimension"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["theDimension"] {
 H theHierarchy ""
 }
-h000["theHierarchy"] {
+h010["theHierarchy"] {
 L theLevel ""
 }
-"c0" ||--|| "d00" : "KEY"
-"d00" ||--|| "h000" : "KEY-KEY"
+"c0" ||--|| "d01" : "KEY"
+"d01" ||--|| "h010" : "KEY-KEY"
 ```
 ---
 ### Database :
@@ -69,8 +53,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -108,8 +92,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
