@@ -1,38 +1,10 @@
 # Documentation
-### CatalogName : Hierarchy - Query based on all in one Table
-### Schema Hierarchy - Query based on all in one Table : 
+### CatalogName : Hierarchy - Query - all in 1 Table
+### Schema Hierarchy - Query - all in 1 Table : 
 ---
 ### Cubes :
 
     Cube Query linked Tables
-
----
-#### Cube "Cube Query linked Tables":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    TownHierarchy
-
-##### Hierarchy TownHierarchy:
-
-Tables: "Fact"
-
-Levels: "Country, Town"
-
-###### Level "Country" :
-
-    column(s): KEY
-
-###### Level "Town" :
-
-    column(s): KEY
 
 ### Cube "Cube Query linked Tables" diagram:
 
@@ -53,18 +25,26 @@ Levels: "Country, Town"
 erDiagram
 c0["Cube Query linked Tables"]{
 M theMeasure ""
-D _ ""
+M Fact_Count ""
+D Measures ""
+D Town ""
 }
-d00["Town"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["Town"] {
 H TownHierarchy ""
 }
-h000["TownHierarchy"] {
+h010["TownHierarchy"] {
 L Country ""
 L Town ""
 }
-"c0" ||--|| "d00" : "KEY-KEY"
-"d00" ||--|| "h000" : "KEY-KEY"
-"d00" ||--|| "h000" : "KEY-KEY"
+"c0" ||--|| "d01" : "KEY-KEY"
+"d01" ||--|| "h010" : "KEY-KEY"
+"d01" ||--|| "h010" : "KEY-KEY"
 ```
 ---
 ### Database :
@@ -75,9 +55,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
-string COUNTRY "is null (1000000000.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -94,7 +73,7 @@ string COUNTRY "is null (1000000000.0) ✔"
 }
 ```
 ---
-### Cube Matrix for Hierarchy - Query based on all in one Table:
+### Cube Matrix for Hierarchy - Query - all in 1 Table:
 ```mermaid
 quadrantChart
 title Cube Matrix
@@ -116,14 +95,13 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
-string COUNTRY "is null (1000000000.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
 ---
-## Validation result for catalog Hierarchy - Query based on all in one Table
+## Validation result for catalog Hierarchy - Query - all in 1 Table
 ## <span style='color: blue;'>WARNING</span> : 
 |Type|   |
 |----|---|

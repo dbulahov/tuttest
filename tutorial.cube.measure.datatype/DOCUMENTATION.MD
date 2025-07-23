@@ -1,17 +1,10 @@
 # Documentation
-### CatalogName : Cube - Measures and Datatypes
-### Schema Cube - Measures and Datatypes : 
+### CatalogName : Measure - Datatypes
+### Schema Measure - Datatypes : 
 ---
 ### Cubes :
 
     MeasuresDatatypeCube
-
----
-#### Cube "MeasuresDatatypeCube":
-
-    
-
-##### Table: "Fact"
 
 ### Cube "MeasuresDatatypeCube" diagram:
 
@@ -33,6 +26,14 @@ erDiagram
 c0["MeasuresDatatypeCube"]{
 M Measure_-_Datatype_Integer ""
 M Measure_-_Datatype_Numeric ""
+M Fact_Count ""
+D Measures ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -44,8 +45,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -61,7 +62,7 @@ int VALUE "is null (32.0) ✔"
 }
 ```
 ---
-### Cube Matrix for Cube - Measures and Datatypes:
+### Cube Matrix for Measure - Datatypes:
 ```mermaid
 quadrantChart
 title Cube Matrix
@@ -83,13 +84,13 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
 ---
-## Validation result for catalog Cube - Measures and Datatypes
+## Validation result for catalog Measure - Datatypes
 ## <span style='color: blue;'>WARNING</span> : 
 |Type|   |
 |----|---|

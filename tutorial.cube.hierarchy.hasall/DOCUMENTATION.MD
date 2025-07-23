@@ -6,50 +6,6 @@
 
     HasAll Cube
 
----
-#### Cube "HasAll Cube":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    Hierarchy - with HasAll, Hierarchy - with HasAll and Names, Hierarchy - Without HasAll
-
-##### Hierarchy Hierarchy - with HasAll:
-
-Tables: "Fact"
-
-Levels: "theLevel"
-
-###### Level "theLevel" :
-
-    column(s): KEY
-
-##### Hierarchy Hierarchy - with HasAll and Names:
-
-Tables: "Fact"
-
-Levels: "theLevel"
-
-###### Level "theLevel" :
-
-    column(s): KEY
-
-##### Hierarchy Hierarchy - Without HasAll:
-
-Tables: "Fact"
-
-Levels: "theLevel"
-
-###### Level "theLevel" :
-
-    column(s): KEY
-
 ### Cube "HasAll Cube" diagram:
 
 ---
@@ -69,28 +25,40 @@ Levels: "theLevel"
 erDiagram
 c0["HasAll Cube"]{
 M theMeasure ""
-D _ ""
+M Fact_Count ""
+D Measures ""
+D Dimension1 ""
 }
-d00["Dimension1"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["Dimension1"] {
 H Hierarchy_-_with_HasAll ""
 H Hierarchy_-_with_HasAll_and_Names ""
 H Hierarchy_-_Without_HasAll ""
 }
-h000["Hierarchy_-_with_HasAll"] {
+h010["Hierarchy_-_with_HasAll"] {
+L _All_ ""
 L theLevel ""
 }
-h001["Hierarchy_-_with_HasAll_and_Names"] {
+h011["Hierarchy_-_with_HasAll_and_Names"] {
+L theAllLevelName ""
 L theLevel ""
 }
-h002["Hierarchy_-_Without_HasAll"] {
+h012["Hierarchy_-_Without_HasAll"] {
 L theLevel ""
 }
-"c0" ||--|| "d00" : "KEY"
-"d00" ||--|| "h000" : "KEY-KEY"
-"c0" ||--|| "d00" : "KEY"
-"d00" ||--|| "h001" : "KEY-KEY"
-"c0" ||--|| "d00" : "KEY"
-"d00" ||--|| "h002" : "KEY-KEY"
+"c0" ||--|| "d01" : "KEY"
+"d01" ||--|| "h010" : "KEY-"
+"d01" ||--|| "h010" : "KEY-KEY"
+"c0" ||--|| "d01" : "KEY"
+"d01" ||--|| "h011" : "KEY-"
+"d01" ||--|| "h011" : "KEY-KEY"
+"c0" ||--|| "d01" : "KEY"
+"d01" ||--|| "h012" : "KEY-KEY"
 ```
 ---
 ### Database :
@@ -101,8 +69,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -140,8 +108,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```

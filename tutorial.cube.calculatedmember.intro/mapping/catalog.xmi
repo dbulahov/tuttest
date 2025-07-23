@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:roma="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping">
+  <roma:ExplicitHierarchy id="_hierarchy" name="theHierarchy" hasAll="true" primaryKey="_col_fact_key" query="_query" levels="_level"/>
   <roma:Catalog name="Cube - CalculatedMembers Intro" cubes="_cube" dbschemas="_databaseschema"/>
   <roma:DatabaseSchema id="_databaseschema">
     <tables xsi:type="roma:PhysicalTable" id="_table_fact" name="Fact">
@@ -9,15 +10,14 @@
   </roma:DatabaseSchema>
   <roma:TableQuery id="_query" table="_table_fact"/>
   <roma:Level id="_level" name="theLevel" column="_col_fact_key"/>
-  <roma:Hierarchy id="_hierarchy" name="theHierarchy" levels="_level" hasAll="true" primaryKey="_col_fact_key" query="_query"/>
   <roma:StandardDimension id="_dimension" name="theDimension" hierarchies="_hierarchy"/>
   <roma:PhysicalCube id="_cube" name="Cube CalculatedMember" query="_query">
     <calculatedMembers id="_cm1" name="Calculated Member 1" formula="[Measures].[Measure1-Sum] / [Measures].[Measure2-Count]"/>
     <calculatedMembers id="_cm2" name="Calculated Member 2" formula="[Measures].[Measure1-Sum] / [Measures].[Measure2-Count]" parent="[theDimension].[theHierarchy].[All theHierarchys]" hierarchy="_hierarchy"/>
     <dimensionConnectors foreignKey="_col_fact_key" dimension="_dimension"/>
     <measureGroups>
-      <measures id="Measure1-Sum" name="Measure1-Sum" column="_col_fact_value" aggregator="sum"/>
-      <measures id="Measure2-Count" name="Measure2-Count" column="_col_fact_value" aggregator="count"/>
+      <measures xsi:type="roma:SumMeasure" id="Measure1-Sum" name="Measure1-Sum" column="_col_fact_value"/>
+      <measures xsi:type="roma:CountMeasure" id="Measure2-Count" name="Measure2-Count" column="_col_fact_value"/>
     </measureGroups>
   </roma:PhysicalCube>
 </xmi:XMI>

@@ -1,17 +1,10 @@
 # Documentation
-### CatalogName : Cube - Measures Multiple
-### Schema Cube - Measures Multiple : 
+### CatalogName : Measure - Multiple Measures
+### Schema Measure - Multiple Measures : 
 ---
 ### Cubes :
 
     MultipleMeasuresCube
-
----
-#### Cube "MultipleMeasuresCube":
-
-    
-
-##### Table: "Fact"
 
 ### Cube "MultipleMeasuresCube" diagram:
 
@@ -34,6 +27,14 @@ c0["MultipleMeasuresCube"]{
 M Sum_of_Value1 ""
 M Sum_of_Value2 ""
 M Sum_of_Value3 ""
+M Fact_Count ""
+D Measures ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -45,10 +46,10 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE1 "is null (32.0) ✔"
-int VALUE2 "is null (32.0) ✔"
-int VALUE3 "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE1 "is null ✔"
+Integer VALUE2 "is null ✔"
+Integer VALUE3 "is null ✔"
 }
 
 ```
@@ -66,7 +67,7 @@ int VALUE3 "is null (32.0) ✔"
 }
 ```
 ---
-### Cube Matrix for Cube - Measures Multiple:
+### Cube Matrix for Measure - Multiple Measures:
 ```mermaid
 quadrantChart
 title Cube Matrix
@@ -88,15 +89,15 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE1 "is null (32.0) ✔"
-int VALUE2 "is null (32.0) ✔"
-int VALUE3 "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE1 "is null ✔"
+Integer VALUE2 "is null ✔"
+Integer VALUE3 "is null ✔"
 }
 
 ```
 ---
-## Validation result for catalog Cube - Measures Multiple
+## Validation result for catalog Measure - Multiple Measures
 ## <span style='color: blue;'>WARNING</span> : 
 |Type|   |
 |----|---|

@@ -1,17 +1,10 @@
 # Documentation
-### CatalogName : Cube - KPI Introduction
-### Schema Cube - KPI Introduction : 
+### CatalogName : Kpi - Introduction
+### Schema Kpi - Introduction : 
 ---
 ### Cubes :
 
     Cube Kpi
-
----
-#### Cube "Cube Kpi":
-
-    
-
-##### Table: "Fact"
 
 ### Cube "Cube Kpi" diagram:
 
@@ -32,9 +25,17 @@
 erDiagram
 c0["Cube Kpi"]{
 M Measure1-Sum ""
+M Fact_Count ""
+D Measures ""
 KPI Kpi1 ""
 KPI Kpi2 ""
 KPI Kpi3 ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -46,7 +47,7 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int VALUE "is null (32.0) ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -61,7 +62,7 @@ int VALUE "is null (32.0) ✔"
 }
 ```
 ---
-### Cube Matrix for Cube - KPI Introduction:
+### Cube Matrix for Kpi - Introduction:
 ```mermaid
 quadrantChart
 title Cube Matrix
@@ -83,12 +84,12 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int VALUE "is null (32.0) ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
 ---
-## Validation result for catalog Cube - KPI Introduction
+## Validation result for catalog Kpi - Introduction
 ## <span style='color: blue;'>WARNING</span> : 
 |Type|   |
 |----|---|

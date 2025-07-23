@@ -1,42 +1,10 @@
 # Documentation
-### CatalogName : Hierarchy - Query based on a 2 Joind with 3 Levels
-### Schema Hierarchy - Query based on a 2 Joind with 3 Levels : 
+### CatalogName : Hierarchy - Query - 2 Joins, 3 Levels
+### Schema Hierarchy - Query - 2 Joins, 3 Levels : 
 ---
 ### Cubes :
 
     Cube Query linked Tables
-
----
-#### Cube "Cube Query linked Tables":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    TownHierarchy
-
-##### Hierarchy TownHierarchy:
-
-Tables: "Town,Country,Continent"
-
-Levels: "Continent, County, Town"
-
-###### Level "Continent" :
-
-    column(s): ID
-
-###### Level "County" :
-
-    column(s): ID
-
-###### Level "Town" :
-
-    column(s): ID
 
 ### Cube "Cube Query linked Tables" diagram:
 
@@ -57,20 +25,28 @@ Levels: "Continent, County, Town"
 erDiagram
 c0["Cube Query linked Tables"]{
 M theMeasure ""
-D _ ""
+M Fact_Count ""
+D Measures ""
+D Continent - Country - Town ""
 }
-d00["Continent_-_Country_-_Town"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["Continent - Country - Town"] {
 H TownHierarchy ""
 }
-h000["TownHierarchy"] {
+h010["TownHierarchy"] {
 L Continent ""
 L County ""
 L Town ""
 }
-"c0" ||--|| "d00" : "TOWN_ID-ID"
-"d00" ||--|| "h000" : "ID-ID"
-"d00" ||--|| "h000" : "ID-ID"
-"d00" ||--|| "h000" : "ID-ID"
+"c0" ||--|| "d01" : "TOWN_ID-ID"
+"d01" ||--|| "h010" : "ID-ID"
+"d01" ||--|| "h010" : "ID-ID"
+"d01" ||--|| "h010" : "ID-ID"
 ```
 ---
 ### Database :
@@ -80,23 +56,23 @@ L Town ""
 title: Diagram;
 ---
 erDiagram
-"Continent✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-}
-"Country✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-int CONTINENT_ID "is null (32.0) ✔"
-}
 "Fact✔"{
-int TOWN_ID "is null (32.0) ✔"
-int VALUE "is null (32.0) ✔"
+Integer TOWN_ID "is null ✔"
+Integer VALUE "is null ✔"
 }
 "Town✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-int COUNTRY_ID "is null (32.0) ✔"
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
+Integer COUNTRY_ID "is null ✔"
+}
+"Country✔"{
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
+Integer CONTINENT_ID "is null ✔"
+}
+"Continent✔"{
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
 }
 
 "Fact✔" ||--o{ "Town✔" : "TOWN_ID-ID"
@@ -115,7 +91,7 @@ int VALUE "is null (32.0) ✔"
 }
 ```
 ---
-### Cube Matrix for Hierarchy - Query based on a 2 Joind with 3 Levels:
+### Cube Matrix for Hierarchy - Query - 2 Joins, 3 Levels:
 ```mermaid
 quadrantChart
 title Cube Matrix
@@ -136,23 +112,23 @@ Cube Cube_Query_linked_Tables: [0.1500, 0.0001]
 title: Diagram;
 ---
 erDiagram
-"Continent✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-}
-"Country✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-int CONTINENT_ID "is null (32.0) ✔"
-}
 "Fact✔"{
-int TOWN_ID "is null (32.0) ✔"
-int VALUE "is null (32.0) ✔"
+Integer TOWN_ID "is null ✔"
+Integer VALUE "is null ✔"
 }
 "Town✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
-int COUNTRY_ID "is null (32.0) ✔"
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
+Integer COUNTRY_ID "is null ✔"
+}
+"Country✔"{
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
+Integer CONTINENT_ID "is null ✔"
+}
+"Continent✔"{
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
 }
 
 "Fact✔" ||--o{ "Town✔" : "TOWN_ID-ID"
@@ -160,7 +136,7 @@ int COUNTRY_ID "is null (32.0) ✔"
 "Country✔" ||--o{ "Continent✔" : "CONTINENT_ID-ID"
 ```
 ---
-## Validation result for catalog Hierarchy - Query based on a 2 Joind with 3 Levels
+## Validation result for catalog Hierarchy - Query - 2 Joins, 3 Levels
 ## <span style='color: blue;'>WARNING</span> : 
 |Type|   |
 |----|---|

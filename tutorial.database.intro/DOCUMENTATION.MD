@@ -27,7 +27,7 @@ title: Diagram;
 ---
 erDiagram
 "TableOne✔"{
-string ColumnOne "is null (1000000000.0) ✔"
+Varchar ColumnOne "is null ✔"
 }
 
 ```

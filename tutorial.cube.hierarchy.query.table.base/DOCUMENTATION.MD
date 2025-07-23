@@ -1,34 +1,10 @@
 # Documentation
-### CatalogName : Hierarchy - Query based on seperate Tables for Fact and Dimension
-### Schema Hierarchy - Query based on seperate Tables for Fact and Dimension : 
+### CatalogName : Hierarchy - Query - seperate Tables, Fact and Dimension
+### Schema Hierarchy - Query - seperate Tables, Fact and Dimension : 
 ---
 ### Cubes :
 
     Cube Query linked Tables
-
----
-#### Cube "Cube Query linked Tables":
-
-    
-
-##### Table: "Fact"
-
-##### Dimensions:
-##### Dimension "":
-
-Hierarchies:
-
-    TownHierarchy
-
-##### Hierarchy TownHierarchy:
-
-Tables: "Town"
-
-Levels: "Town"
-
-###### Level "Town" :
-
-    column(s): ID
 
 ### Cube "Cube Query linked Tables" diagram:
 
@@ -49,16 +25,24 @@ Levels: "Town"
 erDiagram
 c0["Cube Query linked Tables"]{
 M theMeasure ""
-D _ ""
+M Fact_Count ""
+D Measures ""
+D Town ""
 }
-d00["Town"] {
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
+}
+d01["Town"] {
 H TownHierarchy ""
 }
-h000["TownHierarchy"] {
+h010["TownHierarchy"] {
 L Town ""
 }
-"c0" ||--|| "d00" : "TOWN_ID-ID"
-"d00" ||--|| "h000" : "ID-ID"
+"c0" ||--|| "d01" : "TOWN_ID-ID"
+"d01" ||--|| "h010" : "ID-ID"
 ```
 ---
 ### Database :
@@ -69,12 +53,12 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int TOWN_ID "is null (32.0) ✔"
-int VALUE "is null (32.0) ✔"
+Integer TOWN_ID "is null ✔"
+Integer VALUE "is null ✔"
 }
 "Town✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
 }
 
 "Fact✔" ||--o{ "Town✔" : "TOWN_ID-ID"
@@ -91,7 +75,7 @@ int VALUE "is null (32.0) ✔"
 }
 ```
 ---
-### Cube Matrix for Hierarchy - Query based on seperate Tables for Fact and Dimension:
+### Cube Matrix for Hierarchy - Query - seperate Tables, Fact and Dimension:
 ```mermaid
 quadrantChart
 title Cube Matrix
@@ -113,18 +97,18 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-int TOWN_ID "is null (32.0) ✔"
-int VALUE "is null (32.0) ✔"
+Integer TOWN_ID "is null ✔"
+Integer VALUE "is null ✔"
 }
 "Town✔"{
-int ID "is null (32.0) ✔"
-string NAME "is null (1000000000.0) ✔"
+Integer ID "is null ✔"
+Varchar NAME "is null ✔"
 }
 
 "Fact✔" ||--o{ "Town✔" : "TOWN_ID-ID"
 ```
 ---
-## Validation result for catalog Hierarchy - Query based on seperate Tables for Fact and Dimension
+## Validation result for catalog Hierarchy - Query - seperate Tables, Fact and Dimension
 ## <span style='color: blue;'>WARNING</span> : 
 |Type|   |
 |----|---|

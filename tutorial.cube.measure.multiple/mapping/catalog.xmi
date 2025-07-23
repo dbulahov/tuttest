@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:roma="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping">
-  <roma:Catalog name="Cube - Measures Multiple" cubes="_cube" dbschemas="databaseSchema"/>
+  <roma:Catalog name="Measure - Multiple Measures" cubes="_cube" dbschemas="databaseSchema"/>
   <roma:DatabaseSchema id="databaseSchema">
     <tables xsi:type="roma:PhysicalTable" id="_tab" name="Fact">
       <columns xsi:type="roma:PhysicalColumn" id="_col_key" name="KEY"/>
@@ -12,9 +12,9 @@
   <roma:TableQuery id="_query" table="_tab"/>
   <roma:PhysicalCube id="_cube" name="MultipleMeasuresCube" defaultMeasure="_measure3" query="_query">
     <measureGroups>
-      <measures id="_measure1" name="Sum of Value1" column="_col_value1" aggregator="sum"/>
-      <measures id="_measure2" name="Sum of Value2" column="_col_value2" aggregator="sum"/>
-      <measures id="_measure3" name="Sum of Value3" column="_col_value3" aggregator="sum"/>
+      <measures xsi:type="roma:SumMeasure" id="_measure1" name="Sum of Value1" column="_col_value1"/>
+      <measures xsi:type="roma:SumMeasure" id="_measure2" name="Sum of Value2" column="_col_value2"/>
+      <measures xsi:type="roma:SumMeasure" id="_measure3" name="Sum of Value3" column="_col_value3"/>
     </measureGroups>
   </roma:PhysicalCube>
 </xmi:XMI>

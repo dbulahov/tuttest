@@ -1,17 +1,10 @@
 # Documentation
-### CatalogName : Cube - Measures and MeasureGroups
-### Schema Cube - Measures and MeasureGroups : 
+### CatalogName : Measure - MeasureGroups
+### Schema Measure - MeasureGroups : 
 ---
 ### Cubes :
 
     MeasureGroupCube
-
----
-#### Cube "MeasureGroupCube":
-
-    
-
-##### Table: "Fact"
 
 ### Cube "MeasureGroupCube" diagram:
 
@@ -34,6 +27,14 @@ c0["MeasureGroupCube"]{
 M Measure_A ""
 M Measure_B ""
 M Measure_1 ""
+M Fact_Count ""
+D Measures ""
+}
+d00["Measures"] {
+H Measures ""
+}
+h000["Measures"] {
+L MeasuresLevel ""
 }
 ```
 ---
@@ -45,8 +46,8 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
@@ -62,7 +63,7 @@ int VALUE "is null (32.0) ✔"
 }
 ```
 ---
-### Cube Matrix for Cube - Measures and MeasureGroups:
+### Cube Matrix for Measure - MeasureGroups:
 ```mermaid
 quadrantChart
 title Cube Matrix
@@ -84,13 +85,13 @@ title: Diagram;
 ---
 erDiagram
 "Fact✔"{
-string KEY "is null (1000000000.0) ✔"
-int VALUE "is null (32.0) ✔"
+Varchar KEY "is null ✔"
+Integer VALUE "is null ✔"
 }
 
 ```
 ---
-## Validation result for catalog Cube - Measures and MeasureGroups
+## Validation result for catalog Measure - MeasureGroups
 ## <span style='color: blue;'>WARNING</span> : 
 |Type|   |
 |----|---|

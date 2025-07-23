@@ -27,7 +27,12 @@ title: Diagram;
 ---
 erDiagram
 "theTable❌"{
-string ColumnOne "is null (1000000000.0) ✔"
+Varchar theColumn "is null ✔"
+Varchar theColumn "is null ❌"
+Varchar theColumn "is null ❌"
+}
+"theTable❌"{
+Varchar theColumn "is null ✔"
 Varchar theColumn "is null ❌"
 Varchar theColumn "is null ❌"
 }
@@ -38,6 +43,6 @@ Varchar theColumn "is null ❌"
 ## <span style='color: red;'>ERROR</span> : 
 |Type|   |
 |----|---|
+|DATABASE|Schema org.eclipse.daanse.rolap.mapping.emf.rolapmapping.impl.DatabaseSchemaImpl@69cc49ec (id: _dbschema1, description: theDescription, name: foo) does not exist|
 |DATABASE|Column theColumn does not exist in table theTable|
 |DATABASE|Table theTable does not exist in database|
-|DATABASE|Schema org.eclipse.daanse.rolap.mapping.emf.rolapmapping.impl.DatabaseSchemaImpl@8167f57 (id: _dbschema1, description: theDescription, name: foo) does not exist|

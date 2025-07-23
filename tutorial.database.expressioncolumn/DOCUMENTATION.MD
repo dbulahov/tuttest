@@ -27,7 +27,8 @@ title: Diagram;
 ---
 erDiagram
 "TableWithExpressionColumn❌"{
-string column1 "is null (1000000000.0) ✔"
+Varchar column1 "is null ✔"
+Varchar SqlExpressionColumn "is null ✔"
 Varchar SqlExpressionColumn "is null ❌"
 }
 

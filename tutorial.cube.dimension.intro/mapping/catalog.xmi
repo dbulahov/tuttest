@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:roma="https://www.daanse.org/spec/org.eclipse.daanse.rolap.mapping">
+  <roma:ExplicitHierarchy id="_hierarchy" name="theHierarchy" primaryKey="_col_key" query="_query" levels="_level"/>
   <roma:Catalog id="_catalog" name="Dimension - Introduction" cubes="_cube" dbschemas="_dbschema"/>
   <roma:DatabaseSchema id="_dbschema">
     <tables xsi:type="roma:PhysicalTable" id="_tab" name="Fact">
@@ -9,12 +10,11 @@
   </roma:DatabaseSchema>
   <roma:TableQuery id="_query" table="_tab"/>
   <roma:Level id="_level" name="theLevel" column="_col_key"/>
-  <roma:Hierarchy id="_hierarchy" name="theHierarchy" levels="_level" primaryKey="_col_key" query="_query"/>
   <roma:StandardDimension id="_dimension" name="theDimension" hierarchies="_hierarchy"/>
   <roma:PhysicalCube id="_cube" name="CubeWithSimpleDimension" query="_query">
     <dimensionConnectors dimension="_dimension"/>
     <measureGroups>
-      <measures id="_measure" name="theMeasure" column="_col_value" aggregator="sum"/>
+      <measures xsi:type="roma:SumMeasure" id="_measure" name="theMeasure" column="_col_value"/>
     </measureGroups>
   </roma:PhysicalCube>
 </xmi:XMI>
